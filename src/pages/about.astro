@@ -1,4 +1,15 @@
 ---
+const pageTitle = 'about me';
+
+const identity = {
+    firstName: 'Jakub',
+    country: 'Poland',
+    occupation: 'Frontend dev',
+    hobbies: ['bikes', 'video and board games', 'f1'],
+};
+
+const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Astro'];
+const skillColor = 'navy';
 ---
 
 <html lang='en'>
@@ -7,22 +18,51 @@
         <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
         <meta name='viewport' content='width=device-width' />
         <meta name='generator' content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
+        <style define:vars={{ skillColor }}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
-        <a href='/'>Home</a>
-        <a href='/about/'>About</a>
-        <h1>About Me</h1>
-        <h2>... and my new Astro site!</h2>
-
+        <a href='/'>home</a>
+        <a href='/blog/'>blog</a>
+        <a href='/about/'>about</a>
+        <h1>{pageTitle}</h1>
         <p>
-            I am working through Astro's introductory tutorial. This is the
-            second page on my website, and it's the first one I built myself!
+            Here are a few facts about me (pasting from docs, excuse the
+            cringe):
         </p>
-
-        <p>
-            This site will update as I complete more of the tutorial, so keep
-            checking back and see how my journey is going!
-        </p>
+        <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>
+                I live in {identity.country} and I work as a {
+                    identity.occupation
+                }.
+            </li>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        My hobbies:{' '}
+                        {identity.hobbies.map(
+                            (x, i) =>
+                                `${x}${
+                                    i + 1 < identity.hobbies.length ? ', ' : ''
+                                }`
+                        )}
+                    </li>
+                )
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class='skill'>{skill}</li>)}
+        </ul>
     </body>
 </html>

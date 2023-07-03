@@ -1,4 +1,5 @@
 ---
+const pageTitle = 'astro blog homepage';
 ---
 
 <html lang='en'>
@@ -7,12 +8,13 @@
 		<link rel='icon' type='image/svg+xml' href='/favicon.ico' />
 		<meta name='viewport' content='width=device-width' />
 		<meta name='generator' content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 
 	<body>
-		<a href='/'>Home</a>
-		<a href='/about/'>About</a>
-		<h1>Vercel pick this up</h1>
+		<a href='/'>home</a>
+		<a href='/blog/'>blog</a>
+		<a href='/about/'>about</a>
+		<h1>{pageTitle}</h1>
 	</body>
 </html>
