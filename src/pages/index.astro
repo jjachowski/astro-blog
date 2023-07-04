@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import MetaDescription from "../components/MetaDescription.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 const pageTitle = "astro blog homepage";
@@ -12,6 +13,7 @@ const pageTitle = "astro blog homepage";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<MetaDescription />
 	</head>
 
 	<body>

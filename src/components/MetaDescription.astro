@@ -1,0 +1,12 @@
+---
+type Props = {
+    description?: string;
+};
+const { description } = Astro.props;
+---
+
+<meta
+    name="description"
+    content={description ??
+        "Jakub Jachowski's portfolio/learning blog website where I try out new stuff"}
+/>

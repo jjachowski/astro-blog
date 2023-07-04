@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import MetaDescription from "../components/MetaDescription.astro";
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 const pageTitle = "about me";
@@ -28,6 +29,9 @@ const skillColor = "navy";
                 font-weight: bold;
             }
         </style>
+        <MetaDescription
+            description="this page is about author of this website"
+        />
     </head>
     <body>
         <Navigation />
