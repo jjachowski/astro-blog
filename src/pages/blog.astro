@@ -1,27 +1,28 @@
 ---
-import '../styles/global.css';
-const pageTitle = 'blog - learning astro';
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+const pageTitle = "blog - learning astro";
 ---
 
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='utf-8' />
-        <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
-        <meta name='viewport' content='width=device-width' />
-        <meta name='generator' content={Astro.generator} />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
 
     <body>
-        <a href='/'>home</a>
-        <a href='/blog/'>blog</a>
-        <a href='/about/'>about</a>
+        <Navigation />
         <h1>{pageTitle}</h1>
         <p>blog posts:</p>
         <ul>
-            <li><a href='/posts/post-1/'>Post 1</a></li>
-            <li><a href='/posts/post-2/'>Post 2</a></li>
-            <li><a href='/posts/post-3/'>Post 3</a></li>
+            <li><a href="/posts/post-1/">Post 1</a></li>
+            <li><a href="/posts/post-2/">Post 2</a></li>
+            <li><a href="/posts/post-3/">Post 3</a></li>
         </ul>
+        <Footer />
     </body>
 </html>

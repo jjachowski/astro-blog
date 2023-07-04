@@ -1,24 +1,26 @@
 ---
-import '../styles/global.css';
-const pageTitle = 'about me';
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
+const pageTitle = "about me";
 
 const identity = {
-    firstName: 'Jakub',
-    country: 'Poland',
-    occupation: 'Frontend dev',
-    hobbies: ['bikes', 'video and board games', 'f1'],
+    firstName: "Jakub",
+    country: "Poland",
+    occupation: "Frontend dev",
+    hobbies: ["bikes", "video and board games", "f1"],
 };
 
-const skills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Astro'];
-const skillColor = 'navy';
+const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Astro"];
+const skillColor = "navy";
 ---
 
-<html lang='en'>
+<html lang="en">
     <head>
-        <meta charset='utf-8' />
-        <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
-        <meta name='viewport' content='width=device-width' />
-        <meta name='generator' content={Astro.generator} />
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
         <style define:vars={{ skillColor }}>
             .skill {
@@ -28,9 +30,7 @@ const skillColor = 'navy';
         </style>
     </head>
     <body>
-        <a href='/'>home</a>
-        <a href='/blog/'>blog</a>
-        <a href='/about/'>about</a>
+        <Navigation />
         <h1>{pageTitle}</h1>
         <p>
             Here are a few facts about me (pasting from docs, excuse the
@@ -46,11 +46,11 @@ const skillColor = 'navy';
             {
                 identity.hobbies.length >= 2 && (
                     <li>
-                        My hobbies:{' '}
+                        My hobbies:{" "}
                         {identity.hobbies.map(
                             (x, i) =>
                                 `${x}${
-                                    i + 1 < identity.hobbies.length ? ', ' : ''
+                                    i + 1 < identity.hobbies.length ? ", " : ""
                                 }`
                         )}
                     </li>
@@ -59,7 +59,8 @@ const skillColor = 'navy';
         </ul>
         <p>My skills are:</p>
         <ul>
-            {skills.map((skill) => <li class='skill'>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
+        <Footer />
     </body>
 </html>
