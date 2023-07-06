@@ -1,0 +1,29 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import MetaDescription from "../components/MetaDescription.astro";
+import "../styles/global.css";
+type Props = {
+    pageTitle: string;
+    metaDescription?: string;
+};
+const { pageTitle, metaDescription } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+        <MetaDescription description={metaDescription} />
+    </head>
+
+    <body>
+        <Header />
+        <h1>{pageTitle}</h1>
+        <slot />
+        <Footer />
+    </body>
+</html>

@@ -1,7 +1,5 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import MetaDescription from "../components/MetaDescription.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 const pageTitle = "about me";
 
@@ -13,58 +11,32 @@ const identity = {
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Astro"];
-const skillColor = "navy";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{ skillColor }}>
-            .skill {
-                color: var(--skillColor);
-                font-weight: bold;
-            }
-        </style>
-        <MetaDescription
-            description="this page is about author of this website"
-        />
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <p>
-            Here are a few facts about me (pasting from docs, excuse the
-            cringe):
-        </p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>
-                I live in {identity.country} and I work as a {
-                    identity.occupation
-                }.
-            </li>
-            {
-                identity.hobbies.length >= 2 && (
-                    <li>
-                        My hobbies:{" "}
-                        {identity.hobbies.map(
-                            (x, i) =>
-                                `${x}${
-                                    i + 1 < identity.hobbies.length ? ", " : ""
-                                }`
-                        )}
-                    </li>
-                )
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-        <Footer />
-    </body>
-</html>
+<BaseLayout
+    pageTitle={pageTitle}
+    metaDescription="this page is about author of this website"
+>
+    <p>Here are a few facts about me (pasting from docs, excuse the cringe):</p>
+    <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>
+            I live in {identity.country} and I work as a {identity.occupation}.
+        </li>
+        {
+            identity.hobbies.length >= 2 && (
+                <li>
+                    My hobbies:{" "}
+                    {identity.hobbies.map(
+                        (x, i) =>
+                            `${x}${i + 1 < identity.hobbies.length ? ", " : ""}`
+                    )}
+                </li>
+            )
+        }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+</BaseLayout>
