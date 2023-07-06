@@ -2,12 +2,15 @@
 // Supports weights 100-800
 import "@fontsource-variable/jetbrains-mono";
 import "../styles/blogPost.css";
+import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<div class="container">
-    <div class="center">
-        <h1>{frontmatter.title}</h1>
+<BaseLayout
+    pageTitle={frontmatter.title}
+    metaDescription={frontmatter.description}
+>
+    <div class="post-container">
         {
             frontmatter.pubDate && (
                 <p>
@@ -19,4 +22,4 @@ const { frontmatter } = Astro.props;
         <p>Written by {frontmatter.author}</p>
         <slot />
     </div>
-</div>
+</BaseLayout>
