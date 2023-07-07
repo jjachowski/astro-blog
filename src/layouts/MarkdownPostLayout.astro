@@ -13,10 +13,18 @@ const { frontmatter } = Astro.props;
     <div class="post-container">
         {
             frontmatter.pubDate && (
-                <p>
-                    Published on:{" "}
-                    {new Date(frontmatter.pubDate).toLocaleDateString()}
-                </p>
+                <>
+                    <p>
+                        Published on:{" "}
+                        {new Date(frontmatter.pubDate).toLocaleDateString()}
+                    </p>
+                    <p>
+                        tags:{" "}
+                        {frontmatter.tags
+                            .map((x: string) => "#" + x.replaceAll(" ", "_"))
+                            .join(" ")}
+                    </p>
+                </>
             )
         }
         <p>Written by {frontmatter.author}</p>

@@ -1,0 +1,70 @@
+---
+import { MarkdownInstance } from "astro";
+import BlogPost from "../../components/BlogPost.astro";
+import TagLink from "../../components/TagLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+    const allPosts = await Astro.glob("../posts/*.md");
+    // collecting all tags from all posts
+    const allTags = Array.from(
+        new Set(allPosts.flatMap((x) => x.frontmatter.tags))
+    );
+
+    // creating static paths props
+    return allTags.map((tag) => ({
+        params: { tag },
+        props: {
+            posts: allPosts.filter((post) =>
+                (post.frontmatter.tags as any[]).includes(tag)
+            ),
+            allTags,
+        },
+    }));
+}
+
+type Props = {
+    posts: MarkdownInstance<Record<string, any>>[];
+    allTags: string[];
+};
+const { tag } = Astro.params;
+const { posts, allTags } = Astro.props;
+---
+
+<style>
+    .tag-link {
+        margin-right: 1rem;
+    }
+
+    .tags-section {
+        padding: 2rem 0;
+    }
+</style>
+<BaseLayout pageTitle={`Posts tagged with ${tag}`}>
+    {
+        posts.map((post) => (
+            <li>
+                <BlogPost title={post.frontmatter.title} url={post.url} />
+            </li>
+        ))
+    }
+    <div class="tags-section">
+        <p>other tags to check out:</p>
+
+        {
+            allTags.map(
+                (
+                    x
+                    // <a class="tag-link" href={`/tags/${x}`}>
+                    //     #{x.replaceAll(" ", "_").trimEnd()}
+                    // </a>
+                ) => (
+                    <TagLink
+                        text={`#${x.replaceAll(" ", "_")}`}
+                        url={`/tags/${x}`}
+                    />
+                )
+            )
+        }
+    </div>
+</BaseLayout>

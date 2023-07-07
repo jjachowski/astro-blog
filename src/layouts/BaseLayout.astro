@@ -4,10 +4,10 @@ import Header from "../components/Header.astro";
 import MetaDescription from "../components/MetaDescription.astro";
 import "../styles/global.css";
 type Props = {
-    pageTitle: string;
+    pageTitle?: string;
     metaDescription?: string;
 };
-const { pageTitle, metaDescription } = Astro.props;
+const { pageTitle = "This is a page indeed", metaDescription } = Astro.props;
 ---
 
 <html lang="en">

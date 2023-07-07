@@ -1,0 +1,23 @@
+---
+type Props = {
+    text?: string;
+    url?: string;
+};
+const { text, url } = Astro.props;
+---
+
+<style>
+    a {
+        color: #9061f9;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:visited {
+        color: #4a1d96;
+    }
+</style>
+{text && url && <a href={url}>{text}</a>}
