@@ -6,6 +6,11 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
+<style>
+    p {
+        color: #6875f5;
+    }
+</style>
 <BaseLayout
     pageTitle={frontmatter.title}
     metaDescription={frontmatter.description}

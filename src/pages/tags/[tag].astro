@@ -52,19 +52,12 @@ const { posts, allTags } = Astro.props;
         <p>other tags to check out:</p>
 
         {
-            allTags.map(
-                (
-                    x
-                    // <a class="tag-link" href={`/tags/${x}`}>
-                    //     #{x.replaceAll(" ", "_").trimEnd()}
-                    // </a>
-                ) => (
-                    <TagLink
-                        text={`#${x.replaceAll(" ", "_")}`}
-                        url={`/tags/${x}`}
-                    />
-                )
-            )
+            allTags.map((x) => (
+                <TagLink
+                    text={`#${x.replaceAll(" ", "_")}`}
+                    url={`/tags/${x}`}
+                />
+            ))
         }
     </div>
 </BaseLayout>
