@@ -1,14 +1,20 @@
 body {
 	font-family: "JetBrains Mono Variable", sans-serif;
 	color: #4b5563;
+	line-height: 200%;
 }
 h1,
 h2,
 h3 {
 	color: #f17eb8;
+	letter-spacing: -0.15rem;
 }
 strong {
 	color: #9061f9;
+}
+
+p {
+	line-height: 180%;
 }
 
 .post-container {
