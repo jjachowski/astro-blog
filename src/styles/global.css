@@ -22,6 +22,15 @@ h1 {
 	font-size: 2.5rem;
 }
 
+code {
+	color: #9061f9;
+	font-size: 110%;
+}
+
+em {
+	color: #3f83f8;
+}
+
 /* nav styles */
 .hamburger {
 	padding-right: 20px;
