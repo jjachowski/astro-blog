@@ -1,5 +1,5 @@
 import rss, { pagesGlobToRssItems } from "@astrojs/rss";
-
+// todo: in the future add content to rss feed
 export async function get() {
 	return rss({
 		title: "Jakub Jachowski | Blog | Learning",
