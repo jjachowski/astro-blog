@@ -3,13 +3,12 @@ import { MarkdownInstance } from "astro";
 import BlogPost from "../../components/BlogPost.astro";
 import TagLink from "../../components/TagLink.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getUniqueTags } from "../../utils/markdownUtils";
 
 export async function getStaticPaths() {
     const allPosts = await Astro.glob("../posts/*.md");
     // collecting all tags from all posts
-    const allTags = Array.from(
-        new Set(allPosts.flatMap((x) => x.frontmatter.tags))
-    );
+    const allTags = getUniqueTags(await Astro.glob("../posts/*.md"));
 
     // creating static paths props
     return allTags.map((tag) => ({

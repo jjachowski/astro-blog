@@ -7,7 +7,7 @@ image:
   url: "https://docs.astro.build/default-og-image.png"
   alt: "The word “astro” against an illustration of planets and stars."
 pubDate: 2023-07-07
-tags: ["astro", "SSG", "my make on"]
+tags: ["astro", "SSG", "my take on"]
 ---
 
 Alright, let's talk about the `getStaticPaths`` API in Astro. Honestly, it reminds me a lot of how things used to be with SSR in older versions of _next.js_ before they brought in server components. Not gonna lie, I'm not a big fan of this approach. Dealing with object typing can be a pain, and the syntax is a bit complex and hard to remember.
