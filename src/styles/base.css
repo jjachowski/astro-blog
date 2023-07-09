@@ -20,10 +20,9 @@ html.dark {
 }
 
 body {
-	margin: 0 auto;
+	/* margin: 0 auto; */
 	width: 100%;
-	max-width: 80ch;
-	padding: 1rem;
+	/* max-width: 80ch; */
 	font-family: "JetBrains Mono Variable", sans-serif;
 }
 
