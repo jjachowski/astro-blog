@@ -1,6 +1,19 @@
 html {
 	background-color: #fdf2f8;
-	font-family: sans-serif;
+	color: #4b5563;
+}
+
+html.dark {
+	background-color: #233876;
+	color: #fce8f3;
+}
+
+.dark .nav-links a {
+	color: #cabffd;
+}
+
+.dark .nav-links a:hover {
+	color: #42389d;
 }
 
 body {
@@ -8,9 +21,7 @@ body {
 	width: 100%;
 	max-width: 80ch;
 	padding: 1rem;
-	line-height: 1.5;
 	font-family: "JetBrains Mono Variable", sans-serif;
-	color: #4b5563;
 }
 
 * {
@@ -22,6 +33,17 @@ h1 {
 	font-size: 2.5rem;
 }
 
+h1,
+h2,
+h3 {
+	color: #e74694;
+}
+
+html.dark h1,
+h2,
+h3 {
+	color: #f17eb8;
+}
 code {
 	color: #9061f9;
 	font-size: 110%;

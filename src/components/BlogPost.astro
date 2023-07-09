@@ -21,5 +21,13 @@ const { title, url } = Astro.props;
     a:visited {
         color: #751a3d;
     }
+
+    html.dark a {
+        color: #f8b4d9;
+    }
+
+    html.dark a:visited {
+        color: #6875f5;
+    }
 </style>
 {title && url && <a href={url}>{title}</a>}

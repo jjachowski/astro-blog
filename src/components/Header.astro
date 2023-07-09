@@ -1,11 +1,22 @@
 ---
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
+<style>
+    .icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+</style>
 <div>
     <Hamburger />
     <Navigation />
+    <div class="icon">
+        <ThemeIcon />
+    </div>
 </div>
 
 <script>
