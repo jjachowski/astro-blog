@@ -1,9 +1,9 @@
-h2,
-h3 {
-	color: #f17eb8;
-}
 strong {
 	color: #9061f9;
+}
+
+html.dark strong {
+	color: #ac94fa;
 }
 
 p {
@@ -12,4 +12,21 @@ p {
 
 .post-container {
 	padding-bottom: 4rem;
+}
+
+code {
+	color: #9061f9;
+	font-size: 110%;
+}
+
+html.dark code {
+	color: #8da2fb;
+}
+
+em {
+	color: #0e9f6e;
+}
+
+html.dark em {
+	color: #bcf0da;
 }

@@ -21,5 +21,13 @@ const { text, url, fontSize } = Astro.props;
     a:visited {
         color: #4a1d96;
     }
+
+    html.dark a {
+        color: #f8b4d9;
+    }
+
+    html.dark a:visited {
+        color: #6875f5;
+    }
 </style>
 {text && url && <a href={url}>{text}</a>}

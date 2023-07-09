@@ -31,26 +31,27 @@ body {
 h1 {
 	margin: 1rem 0;
 	font-size: 2.5rem;
-}
-
-h1,
-h2,
-h3 {
 	color: #e74694;
 }
 
-html.dark h1,
-h2,
-h3 {
+h2 {
 	color: #f17eb8;
 }
-code {
-	color: #9061f9;
-	font-size: 110%;
+
+h3 {
+	color: #ac94fa;
 }
 
-em {
-	color: #3f83f8;
+html.dark h1 {
+	color: #f17eb8;
+}
+
+html.dark h2 {
+	color: #f8b4d9;
+}
+
+html.dark h3 {
+	color: #cabffd;
 }
 
 p {
