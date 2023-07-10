@@ -2,7 +2,7 @@
 import BlogPost from "../components/BlogPost.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/base.css";
-const pageTitle = "blog - learning astro";
+const pageTitle = "blog page";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
@@ -13,8 +13,8 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
     <p>blog posts:</p>
     <ul>
         {
-            allPosts.reverse().map((post) => (
-                <li>
+            allPosts.reverse().map((post, i) => (
+                <li class="poin mb-4">
                     <BlogPost title={post.frontmatter.title} url={post.url} />
                 </li>
             ))
