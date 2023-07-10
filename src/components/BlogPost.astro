@@ -6,28 +6,13 @@ type Props = {
 const { title, url } = Astro.props;
 ---
 
-<style>
-    a {
-        font-size: larger;
-        line-height: 200%;
-        color: #d61f69;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    a:visited {
-        color: #751a3d;
-    }
-
-    html.dark a {
-        color: #f8b4d9;
-    }
-
-    html.dark a:visited {
-        color: #6875f5;
-    }
-</style>
-{title && url && <a href={url}>{title}</a>}
+{
+    title && url && (
+        <a
+            class="text-xl leading-10 text-indigo-500 decoration-2 visited:text-pink-300 hover:text-pink-400 hover:underline"
+            href={url}
+        >
+            {title}
+        </a>
+    )
+}

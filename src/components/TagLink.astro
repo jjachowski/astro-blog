@@ -7,27 +7,4 @@ type Props = {
 const { text, url, fontSize } = Astro.props;
 ---
 
-<style define:vars={{ fontSize }}>
-    a {
-        color: #9061f9;
-        text-decoration: none;
-        font-size: var(--fontSize);
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    a:visited {
-        color: #4a1d96;
-    }
-
-    html.dark a {
-        color: #f8b4d9;
-    }
-
-    html.dark a:visited {
-        color: #6875f5;
-    }
-</style>
 {text && url && <a href={url}>{text}</a>}

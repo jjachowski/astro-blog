@@ -22,7 +22,7 @@ Since I doubt anyone is interested in subscribing to my feed at the moment, I'll
 
 When I came across the point in the Astro tutorial that mentioned installing _Preact_, I immediately thought, "Oh no, React is too heavy to maintain that sweet 100/100 Lighthouse score, so they're suggesting Preact."
 
-To be honest, my knowledge about Preact was limited to its existence as a lightweight version of _React_. Out of curiosity, I decided to take a look at the Preact documentation. And then, I saw it—a true monstrosity. The first example featured a class component, with a paragraph mentioning something about `this.props`. I swiftly closed the browser tab to avoid any brain damage.
+To be honest, my knowledge about Preact was limited to its existence as a lightweight version of _React_. Out of curiosity, I decided to take a look at the Preact documentation. And then, I saw it — a true monstrosity. The first example featured a class component, with a paragraph mentioning something about `this.props`. I swiftly closed the browser tab to avoid any brain damage.
 
 Anyway, I installed the React integration by using yarn astro add react, added JSX to my `tsconfig.json`, and created a simple component by pasting the Astro example code. After making these changes, I promptly pushed them to Github so that they would be deployed to my website. It was the moment of truth... I checked the developer tools, ran Lighthouse tests, and... yes, you guessed it, still 100/100. Cool, React works just fine.
 
