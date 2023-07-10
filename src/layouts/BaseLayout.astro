@@ -11,7 +11,7 @@ type Props = {
 const { pageTitle = "This is a page indeed", metaDescription } = Astro.props;
 ---
 
-<html lang="en" class="bg-pink-100 dark:bg-indigo-900">
+<html lang="en" class="flex justify-center">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -21,7 +21,7 @@ const { pageTitle = "This is a page indeed", metaDescription } = Astro.props;
         <MetaDescription description={metaDescription} />
     </head>
 
-    <body>
+    <body class="w-screen max-w-4xl p-2 sm:p-8">
         <Header />
         <h1>{pageTitle}</h1>
         <slot />

@@ -28,9 +28,12 @@ body {
 
 @layer base {
 	h1 {
-		font-size: 4rem;
-		/* margin: 1rem 0; */
+		font-size: 3rem;
 		color: #e74694;
+
+		@media (min-width: 768px) {
+			font-size: 4rem;
+		}
 	}
 
 	h2 {

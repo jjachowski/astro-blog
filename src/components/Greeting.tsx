@@ -7,9 +7,14 @@ export default function Greeting({ messages }: Props) {
 	const [greeting, setGreeting] = useState(messages[0]);
 
 	return (
-		<div>
-			<h3>{greeting}! Thank you for visiting!</h3>
-			<button onClick={() => setGreeting(randomMessage())}>New Greeting</button>
+		<div className="border-2   p-2 border-pink-500 ">
+			<h3>React component! {greeting}!</h3>
+			<button
+				className="bg-indigo-400 px-4 py-2"
+				onClick={() => setGreeting(randomMessage())}
+			>
+				New Greeting
+			</button>
 		</div>
 	);
 }

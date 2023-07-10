@@ -1,18 +1,15 @@
 ---
 import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<div>
+<div class="relative">
     <Hamburger />
     <Navigation />
-    <div class="icon">
-        <ThemeIcon />
-    </div>
+    <ThemeToggle />
 </div>
 
 <script>
     import "../scripts/expandMenu.ts";
-    // import "../scripts/setTheme.ts";
 </script>
