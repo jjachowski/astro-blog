@@ -34,11 +34,6 @@ body {
     color: #ac94fa;
   }
 
-  html.dark h1 {
-    /* font-size: 4rem; */
-    color: #f17eb8;
-  }
-
   html.dark h2 {
     color: #f8b4d9;
   }

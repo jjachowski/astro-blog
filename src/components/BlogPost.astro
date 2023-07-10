@@ -9,8 +9,8 @@ const { title, url } = Astro.props;
 {
     title && url && (
         <a
-            class="text-xl leading-10 text-indigo-500 decoration-2 visited:text-indigo-400
-            hover:text-pink-400 hover:underline"
+            class="text-xl leading-10 text-indigo-500 decoration-2 hover:text-pink-400
+            hover:underline dark:text-pink-500 visited:dark:text-indigo-400"
             href={url}
         >
             {title}
