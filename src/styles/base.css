@@ -2,60 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 html {
-	background-color: #fdf2f8;
-	color: #4b5563;
+  background-color: #fdf2f8;
+  color: #4b5563;
 }
 
 html.dark {
-	background-color: #233876;
-	color: #fce8f3;
-}
-
-.dark .nav-links a {
-	color: #cabffd;
-}
-
-.dark .nav-links a:hover {
-	color: #42389d;
+  background-color: #233876;
+  color: #fce8f3;
 }
 
 body {
-	/* margin: 0 auto; */
-	width: 100%;
-	/* max-width: 80ch; */
-	font-family: "JetBrains Mono Variable", sans-serif;
+  width: 100%;
+  font-family: "JetBrains Mono Variable", sans-serif;
 }
 
 @layer base {
-	h1 {
-		font-size: 3rem;
-		color: #e74694;
+  h1 {
+    font-size: 3rem;
+    color: #e74694;
+    margin: 1rem 0;
+  }
 
-		@media (min-width: 768px) {
-			font-size: 4rem;
-		}
-	}
+  h2 {
+    font-size: 2rem;
+    color: #f17eb8;
+    margin: 1rem 0;
+  }
 
-	h2 {
-		font-size: 2rem;
-		color: #f17eb8;
-	}
+  h3 {
+    font-size: 1.5rem;
+    color: #ac94fa;
+  }
 
-	h3 {
-		font-size: 1.5rem;
-		color: #ac94fa;
-	}
+  html.dark h1 {
+    /* font-size: 4rem; */
+    color: #f17eb8;
+  }
 
-	html.dark h1 {
-		/* font-size: 4rem; */
-		color: #f17eb8;
-	}
+  html.dark h2 {
+    color: #f8b4d9;
+  }
 
-	html.dark h2 {
-		color: #f8b4d9;
-	}
-
-	html.dark h3 {
-		color: #cabffd;
-	}
+  html.dark h3 {
+    color: #cabffd;
+  }
 }

@@ -5,7 +5,6 @@ export default function Greeting({ messages }: Props) {
     messages[Math.floor(Math.random() * messages.length)];
 
   const [greeting, setGreeting] = useState(messages[0]);
-
   return (
     <div className="border-2 border-pink-500 p-2 px-4">
       <h3>React component! {greeting}!</h3>
