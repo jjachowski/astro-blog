@@ -26,7 +26,9 @@ const { frontmatter } = Astro.props;
                 <>
                     <p>
                         Published on:{" "}
-                        {new Date(frontmatter.pubDate).toLocaleDateString()}
+                        {new Date(frontmatter.pubDate).toLocaleDateString(
+                            "pl-PL"
+                        )}
                     </p>
                     <p>
                         tags:{" "}
