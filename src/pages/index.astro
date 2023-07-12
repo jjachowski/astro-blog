@@ -1,5 +1,7 @@
 ---
-import puzon from "../assets/puzonek_na_trawce.jpeg";
+import { Image } from "astro:assets";
+import chałka from "../assets/chałka_na_hamaku.webp";
+import puzon from "../assets/puzonek_na_trawce.webp";
 import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home Page";
@@ -9,8 +11,16 @@ const pageTitle = "Home Page";
 	<h2 class="">My awesome blog subtitle</h2>
 	<h3>This is h3</h3>
 	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there"]} />
-	<img
-		src={puzon.src}
-		alt="my cat - pyza, sitting on a patch of grass looking beautiful as usual"
-	/>
+	<div class="flex flex-col sm:flex-row space-y-4 sm:space-x-4 my-8">
+		<Image
+			class="sm:w-1/2"
+			src={puzon}
+			alt="my cat - pyza, sitting on a patch of grass looking beautiful as usual"
+		/>
+		<Image
+			class="sm:w-1/2"
+			src={chałka}
+			alt="my cat - chałka, giving herself a quick cleaning session while laying on hammock"
+		/>
+	</div>
 </BaseLayout>
