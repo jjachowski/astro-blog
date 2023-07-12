@@ -11,7 +11,7 @@ export default function Greeting({ messages }: Props) {
         React component! {greeting}!
       </p>
       <button
-        className="border-2 border-blue-500 bg-blue-200 px-4 py-2 text-lg text-blue-500 dark:border-blue-200 dark:bg-blue-500 dark:text-blue-50"
+        className="border-2 border-blue-500  bg-blue-200 px-4 py-2 text-lg text-blue-500 dark:border-blue-200 dark:bg-blue-600 dark:text-blue-50"
         onClick={() => setGreeting(randomMessage())}
       >
         New Greeting
