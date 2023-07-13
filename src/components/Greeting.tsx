@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useState } from "react";
 type Props = { messages: string[] };
 export default function Greeting({ messages }: Props) {
@@ -20,12 +20,12 @@ export default function Greeting({ messages }: Props) {
       >
         New Greeting
       </button>
-      <motion.div
+      {/* <motion.div
         className="bg-red-300 p-8 text-black"
         whileHover={{ scale: 1.3 }}
       >
         hello
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
