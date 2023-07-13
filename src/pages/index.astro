@@ -13,17 +13,36 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 	<div
 		class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 my-8"
 	>
-		<Image
-			class="sm:w-1/2 border-4 border-pink-500 dark:border-pink-700"
-			src={puzolini}
-			quality="low"
-			alt="my cat - pyza, sitting on a patch of grass looking beautiful as usual"
-		/>
-		<Image
-			class="sm:w-1/2 border-4 border-amber-500 dark:border-amber-600"
-			src={szczurson}
-			quality="low"
-			alt="my cat - chałka, giving herself a quick cleaning session while laying on hammock"
-		/>
+		<div
+			class="sm:w-1/2 border-4 border-pink-500 dark:border-pink-300 flex flex-col"
+		>
+			<Image
+				class="border-b-4 border-pink-500 dark:border-pink-300 flex-grow"
+				src={puzolini}
+				quality="low"
+				alt="my cat - pyza, sitting on a patch of grass looking beautiful as usual"
+			/>
+			<p
+				class="text-center bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100 p-4"
+			>
+				this is Pyza
+			</p>
+		</div>
+
+		<div
+			class="sm:w-1/2 border-4 border-amber-500 dark:border-amber-100 flex flex-col"
+		>
+			<Image
+				class="border-b-4 border-amber-500 dark:border-amber-100 flex-grow"
+				src={szczurson}
+				quality="low"
+				alt="my cat - chałka, giving herself a quick cleaning session while laying on hammock"
+			/>
+			<p
+				class="text-center bg-amber-100 p-4 dark:bg-amber-700 text-amber-800 dark:text-amber-100"
+			>
+				this is Chałka
+			</p>
+		</div>
 	</div>
 </BaseLayout>
