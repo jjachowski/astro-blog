@@ -20,7 +20,10 @@ export default function Greeting({ messages }: Props) {
       >
         New Greeting
       </button>
-      <motion.div className="bg-red-300 p-8" whileHover={{ scale: 1.3 }}>
+      <motion.div
+        className="bg-red-300 p-8 text-black"
+        whileHover={{ scale: 1.3 }}
+      >
         hello
       </motion.div>
     </div>
