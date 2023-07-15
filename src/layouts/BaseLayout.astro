@@ -29,7 +29,7 @@ const {
         class="w-screen flex justify-center bg-pink-100 dark:bg-gray-800 text-pink-900 dark:text-pink-100 text-lg"
     >
         <div class="max-w-4xl p-2 sm:p-8">
-            <Header />
+            <Header client:idle />
             {
                 !withoutHeadTag && (
                     <h1 class="mb-8 text-5xl text-pink-600">{pageTitle}</h1>
