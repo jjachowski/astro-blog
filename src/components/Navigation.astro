@@ -1,13 +1,28 @@
 <style>
     .expanded {
-        display: flex !important;
+        /* display: flex !important; */
+        max-height: 14rem !important;
+        border-width: 2px;
     }
 </style>
+
 <div
-    class="nav-links hidden top-0 sm:flex space-y-2 sm:space-y-0 flex-col items-center w-full sm:flex-row sm:space-x-4"
+    class="max-h-0 border-orange-200 dark:border-orange-700 hover:border-orange-300 sm:max-h-none sm:flex-row sm:items-start overflow-hidden hover:max-h-32 transition-all duration-300 ease-in-out nav-links grid grid-cols-2 gap-4 sm:space-x-4 sm:flex sm:overflow-visible"
 >
-    <a class="text-2xl text-fuchsia-400" href="/">Home</a>
-    <a class="text-2xl text-fuchsia-400" href="/blog/">Blog</a>
-    <a class="text-2xl text-fuchsia-400" href="/tags/">Tags</a>
-    <a class="text-2xl text-fuchsia-400" href="/about/">About</a>
+    <a
+        class="text-2xl px-8 py-2 sm:transition-all sm:hover:scale-125 text-orange-500 text-center sm:px-4 hover:text-orange-50 hover:border-orange-500 dark:hover:bg-orange-800 dark:hover:text-orange-200 hover:bg-orange-300 border-4 border-transparent"
+        href="/">Home 🏠</a
+    >
+    <a
+        class="text-2xl px-8 py-2 sm:transition-all sm:hover:scale-125 text-orange-500 text-center sm:px-4 hover:text-orange-50 hover:border-orange-500 dark:hover:bg-orange-800 dark:hover:text-orange-200 hover:bg-orange-300 border-4 border-transparent"
+        href="/blog/">Blog 📖</a
+    >
+    <a
+        class="text-2xl px-8 py-2 sm:transition-all sm:hover:scale-125 text-orange-500 text-center sm:px-4 hover:text-orange-50 hover:border-orange-500 dark:hover:bg-orange-800 dark:hover:text-orange-200 hover:bg-orange-300 border-4 border-transparent"
+        href="/tags/">Tags #️⃣</a
+    >
+    <a
+        class="text-2xl px-8 py-2 sm:transition-all sm:hover:scale-125 text-orange-500 text-center sm:px-4 hover:text-orange-50 hover:border-orange-500 dark:hover:bg-orange-800 dark:hover:text-orange-200 hover:bg-orange-300 border-4 border-transparent"
+        href="/about/">About 👨🏻‍💻</a
+    >
 </div>
