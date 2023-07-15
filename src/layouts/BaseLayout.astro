@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" class="flex justify-center bg-pink-50 font-jetbrains">
+<html lang="en" class="font-jetbrains">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -26,14 +26,18 @@ const {
         <MetaDescription description={metaDescription} />
     </head>
 
-    <body class="max-w-4xl p-2 sm:p-8">
-        <Header />
-        {
-            !withoutHeadTag && (
-                <h1 class="mb-8 text-5xl text-indigo-500">{pageTitle}</h1>
-            )
-        }
-        <slot />
-        <Footer />
+    <body
+        class="w-screen flex justify-center bg-pink-100 dark:bg-gray-800 text-pink-900 dark:text-pink-100 text-lg"
+    >
+        <div class="max-w-4xl p-2 sm:p-8">
+            <Header />
+            {
+                !withoutHeadTag && (
+                    <h1 class="mb-8 text-5xl text-pink-600">{pageTitle}</h1>
+                )
+            }
+            <slot />
+            <Footer />
+        </div>
     </body>
 </html>
