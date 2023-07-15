@@ -1,44 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html {
-  background-color: #fdf2f8;
-  color: #4b5563;
-}
-
-html.dark {
-  background-color: #1a2956;
-  color: #fce8f3;
-}
-
-body {
-  width: 100%;
-  font-family: "JetBrains Mono Variable", sans-serif;
-}
 
 @layer base {
-  h1 {
-    font-size: 3rem;
-    color: #c084fc;
-    margin: 1rem 0;
-  }
-
-  h2 {
-    font-size: 2rem;
-    color: #f17eb8;
-    margin: 1rem 0;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    color: #ac94fa;
-  }
-
-  html.dark h2 {
-    color: #f8b4d9;
-  }
-
-  html.dark h3 {
-    color: #cabffd;
-  }
 }

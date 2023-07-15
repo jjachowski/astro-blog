@@ -1,45 +1,47 @@
 ---
 // Supports weights 100-800
 import "@fontsource-variable/jetbrains-mono";
-import "../styles/blogPost.css";
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<style>
-    p {
-        color: #6875f5;
-        margin: 0.5rem 0;
-    }
-
-    html.dark p {
-        color: #cabffd;
-    }
-</style>
 <BaseLayout
     pageTitle={frontmatter.title}
     metaDescription={frontmatter.description}
+    withoutHeadTag
 >
-    <div class="post-container">
-        {
-            frontmatter.pubDate && (
-                <>
-                    <p>
-                        Published on:{" "}
-                        {new Date(frontmatter.pubDate).toLocaleDateString(
-                            "pl-PL"
-                        )}
-                    </p>
-                    <p>
-                        tags:{" "}
-                        {frontmatter.tags
-                            .map((x: string) => "#" + x.replaceAll(" ", "_"))
-                            .join(" ")}
-                    </p>
-                </>
-            )
-        }
-        <p>Written by {frontmatter.author}</p>
-        <slot />
+    <div class="max-w-2xl mx-auto">
+        <div
+            class="text-sm bg-gray-100 py-2 px-2 border-2 border-gray-200 mb-8"
+        >
+            <h1 class="text-xl">title: {frontmatter.title}</h1>
+            {
+                frontmatter.pubDate && (
+                    <di>
+                        <p>
+                            published on:{" "}
+                            {new Date(frontmatter.pubDate).toLocaleDateString(
+                                "pl-PL"
+                            )}
+                        </p>
+                        <p>
+                            tags:{" "}
+                            {frontmatter.tags
+                                .map(
+                                    (x: string) => "#" + x.replaceAll(" ", "_")
+                                )
+                                .join(" ")}
+                        </p>
+                    </di>
+                )
+            }
+            <p>written by: {frontmatter.author}</p>
+        </div>
+
+        <article
+            class="prose dark:prose-invert prose-headings:font-medium prose-lg px-2 sm:px-0 prose-em:text-indigo-500 text-justify max-w-none"
+        >
+            <slot />
+        </article>
     </div>
 </BaseLayout>
