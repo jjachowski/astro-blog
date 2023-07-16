@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import szczurson from "../assets/chałka_z_językiem.jpeg";
 import puzolini from "../assets/puzon_dziwna_pozycja.jpeg";
+import CatImage from "../components/CatImage.astro";
 import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -12,7 +13,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 	<div
 		class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 my-8"
 	>
-		<div class="sm:w-1/2 border-4 border-pink-500 dark:border-pink-300">
+		<CatImage
+			src={puzolini}
+			color="pink"
+			description="this is Pyza"
+			alt="my cat - pyza, sitting in a really funny position, kind of like a human would sit, with one leg in the air"
+		/>
+		<CatImage
+			src={szczurson}
+			color=""
+			description="this is Chałka"
+			alt="my cat - pyza, sitting on a patch of grass looking beautiful as usual"
+		/>
+		<!-- <div class="sm:w-1/2 border-4 border-pink-500 dark:border-pink-300">
 			<Image
 				class="border-b-4 border-pink-500 dark:border-pink-300 shadow-2xl"
 				src={puzolini}
@@ -24,7 +37,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 			>
 				this is Pyza
 			</p>
-		</div>
+		</div> -->
 
 		<div class="sm:w-1/2 border-4 border-amber-500 dark:border-amber-100">
 			<Image

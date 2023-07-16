@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  description: string;
+  color: "amber" | "pink";
+}
+
+const { src, alt, description, color } = Astro.props;
+const borderColors = {
+  pink: "border-pink-500 dark:border-pink-300",
+  amber: "border-amber-500 dark:border-amber-100",
+};
+
+const pTagColors = {
+  pink: "bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100",
+  amber:
+    "bg-amber-100 p-4 dark:bg-amber-700 text-amber-800 dark:text-amber-100",
+};
+---
+
+<div class={`sm:w-1/2 border-4 ${borderColors[color]}`}>
+  <Image
+    class="border-b-4 border-pink-500 dark:border-pink-300 shadow-2xl"
+    src={src}
+    quality="low"
+    alt={alt}
+  />
+  <p
+    class="text-center bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100 p-4"
+  >
+    {description}
+  </p>
+</div>

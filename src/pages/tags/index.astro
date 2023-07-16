@@ -2,19 +2,13 @@
 import TagLink from "../../components/TagLink.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getUniqueTags } from "../../utils/markdownUtils";
-const pageTitle = "tags page";
 
 const tags = getUniqueTags(await Astro.glob("../posts/*.md"));
 const description =
     "on this website you can find list of all tags used throughout all blog posts";
 ---
 
-<style>
-    .tags-list {
-        margin: 2rem 0;
-    }
-</style>
-<BaseLayout pageTitle={pageTitle} metaDescription={description}>
+<BaseLayout pageTitle={"Tags page"} metaDescription={description}>
     <h3>{description}</h3>
     <div class="tags-list">
         {
