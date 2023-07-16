@@ -2,9 +2,8 @@
 type Props = {
     text?: string;
     url?: string;
-    fontSize?: string;
 };
-const { text, url, fontSize } = Astro.props;
+const { text, url } = Astro.props;
 ---
 
 {text && url && <a href={url}>{text}</a>}
