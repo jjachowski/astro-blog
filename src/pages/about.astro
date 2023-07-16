@@ -9,15 +9,17 @@ const pageTitle = "About me";
     pageTitle={pageTitle}
     metaDescription="this page is about author of this website - Jakub Jachowski"
 >
-    <div class="prose prose-p:text-justify mx-4">
-        <div class="flex flex-col items-center">
+    <div class="prose prose-p:text-justify dark:prose-invert">
+        <div class="flex flex-col items-center sm:flex-row">
             <Image
                 src={hondziarz}
                 alt="ja"
                 quality={"low"}
-                class={"border-4 border-indigo-500 w-3/4 mb-2"}
+                class={"border-4 border-indigo-500 w-3/4 mb-2 sm:w-1/3 shadow-md sm:shadow-2xl "}
             />
-            <h2 class="text-3xl text-pink-600 mb-0 text-center mt-0">
+            <h2
+                class="text-3xl text-pink-600 mb-0 text-center mt-0 sm:text-right grow"
+            >
                 Hello there! <br /> My name is Jakub.
             </h2>
         </div>
