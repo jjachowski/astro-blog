@@ -7,10 +7,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout pageTitle="Home Page">
+	<p class="text-xl mb-8">
+		Welcome on my portfolio/blog/playground website, feel free to explore
+	</p>
+
 	<Greeting client:idle messages={["Hi", "Hello", "Howdy", "Hey there"]} />
 
+	<p class="text-xl mt-8 mb-2">Behold - my cats:</p>
 	<div
-		class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 my-8"
+		class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 mb-8"
 	>
 		<CatImage
 			src={puzolini}

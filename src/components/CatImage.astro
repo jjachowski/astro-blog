@@ -21,9 +21,11 @@ const pTagColors = {
 };
 ---
 
-<div class={`sm:w-1/2 border-4 ${borderColors[color]}`}>
+<div
+  class={`sm:w-1/2 border-4 ${borderColors[color]} shadow-md sm:shadow-2xl sm:hover:scale-[1.02] transition ease-linear duration-300`}
+>
   <Image
-    class={`border-b-4 ${borderColors[color]} shadow-2xl`}
+    class={`border-b-4 ${borderColors[color]}`}
     src={src}
     quality="low"
     alt={alt}

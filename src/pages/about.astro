@@ -2,31 +2,31 @@
 import Image from "astro/components/Image.astro";
 import hondziarz from "../assets/ja_w_hondzie.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "About me";
 ---
 
 <BaseLayout
-    pageTitle={pageTitle}
+    pageTitle={"About me"}
     metaDescription="this page is about author of this website - Jakub Jachowski"
 >
     <div class="prose prose-p:text-justify dark:prose-invert">
-        <div class="flex flex-col items-center sm:flex-row">
+        <div class="flex flex-col items-center sm:items-end sm:flex-row">
             <Image
                 src={hondziarz}
                 alt="ja"
                 quality={"low"}
-                class={"border-4 border-indigo-500 w-3/4 mb-2 sm:w-1/3 shadow-md sm:shadow-2xl "}
+                class={"border-4 border-indigo-500 w-3/4 mb-2 sm:w-1/4 shadow-md sm:shadow-2xl "}
             />
             <h2
-                class="text-3xl text-pink-600 mb-0 text-center mt-0 sm:text-right grow"
+                class="text-3xl sm:text-4xl text-pink-600 mb-0 text-center mt-0 sm:text-right grow"
             >
                 Hello there! <br /> My name is Jakub.
             </h2>
         </div>
         <p>
-            I'm a frontend developer who likes to try out new stuff. Currently
-            TypeScript, React.js, Next.js, Astro nad Tailwind are my tools of
-            choice for creating high performance good looking UIs with ease.
+            I'm a frontend developer who always looks forward to yet another js
+            framework. Currently TypeScript, React.js, Next.js, Astro nad
+            Tailwind are my tools of choice for creating high performance good
+            looking UIs with ease.
         </p>
         <p>Can't stand plain JS, always ready to refactor to TypeScript.</p>
         <p>Code review</p>
