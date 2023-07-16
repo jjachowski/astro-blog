@@ -1,13 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "plugins": [
-    {
-      "name": "@astrojs/ts-plugin"
-    }
-  ],
+
   "compilerOptions": {
-    "jsx": "react-jsx",
     "importsNotUsedAsValues": "error",
-    "strict": true
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "jsxImportSource": "react",
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
   }
 }

@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
 
-interface Props {
+type Props = {
   src: ImageMetadata;
   alt: string;
   description: string;
   color: "amber" | "pink";
-}
+};
 
 const { src, alt, description, color } = Astro.props;
 const borderColors = {
@@ -23,14 +23,12 @@ const pTagColors = {
 
 <div class={`sm:w-1/2 border-4 ${borderColors[color]}`}>
   <Image
-    class="border-b-4 border-pink-500 dark:border-pink-300 shadow-2xl"
+    class={`border-b-4 ${borderColors[color]} shadow-2xl`}
     src={src}
     quality="low"
     alt={alt}
   />
-  <p
-    class="text-center bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100 p-4"
-  >
+  <p class={`text-center ${pTagColors[color]} p-4`}>
     {description}
   </p>
 </div>
