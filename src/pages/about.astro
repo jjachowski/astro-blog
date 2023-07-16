@@ -1,41 +1,45 @@
 ---
+import Image from "astro/components/Image.astro";
+import hondziarz from "../assets/ja_w_hondzie.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "about me";
-
-const identity = {
-    firstName: "Jakub",
-    country: "Poland",
-    occupation: "Frontend dev",
-    hobbies: ["bikes", "video and board games", "f1"],
-};
-
-const skills = ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Astro"];
+const pageTitle = "About me";
 ---
 
 <BaseLayout
     pageTitle={pageTitle}
-    metaDescription="this page is about author of this website"
+    metaDescription="this page is about author of this website - Jakub Jachowski"
 >
-    <p>Here are a few facts about me (pasting from docs, excuse the cringe):</p>
-    <ul>
-        <li>My name is {identity.firstName}.</li>
-        <li>
-            I live in {identity.country} and I work as a {identity.occupation}.
-        </li>
-        {
-            identity.hobbies.length >= 2 && (
-                <li>
-                    My hobbies:{" "}
-                    {identity.hobbies.map(
-                        (x, i) =>
-                            `${x}${i + 1 < identity.hobbies.length ? ", " : ""}`
-                    )}
-                </li>
-            )
-        }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
+    <div class="prose prose-p:text-justify mx-4">
+        <div class="flex flex-col items-center">
+            <Image
+                src={hondziarz}
+                alt="ja"
+                quality={"low"}
+                class={"border-4 border-indigo-500 w-3/4 mb-2"}
+            />
+            <h2 class="text-3xl text-pink-600 mb-0 text-center mt-0">
+                Hello there! <br /> My name is Jakub.
+            </h2>
+        </div>
+        <p>
+            I'm a frontend developer who's all about creating awesome web
+            experiences. TypeScript, React.js, Next.js, Astro nad Tailwind are
+            my tools of choice for creating high performance good looking UIs
+            with ease.
+        </p>
+        <p>
+            I'm all about little details. Always making sure pixels are just
+            right and user experience is as good and simple as it can be.
+        </p>
+        <p>
+            Outside of coding, you'll find me geeking about all latest science
+            and tech trends, riding my bike, watching formula 1 races or playing
+            with my two cute cats - Pyza and Chałka.
+        </p>
+        <p>
+            On this website I learn all things web related, try out new
+            technologies and spend time changing colors whenever I feel like it.
+            Keeping triple 100/100 lighthouse score is my mission!
+        </p>
+    </div>
 </BaseLayout>

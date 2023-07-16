@@ -3,11 +3,11 @@ import "@fontsource-variable/jetbrains-mono";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import MetaDescription from "../components/MetaDescription.astro";
-type Props = {
+interface Props {
     pageTitle?: string;
     metaDescription?: string;
     withoutHeadTag?: boolean;
-};
+}
 const {
     pageTitle = "This is a page indeed",
     metaDescription,
