@@ -1,0 +1,25 @@
+---
+import TagLink from "./TagLink.astro";
+
+type Props = {
+  tags: {
+    text: string;
+    count: number;
+  }[];
+  withCount?: boolean;
+};
+const { tags, withCount = true } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:flex-wrap mt-4">
+  {
+    tags.map((tag) => (
+      <TagLink
+        text={`#${tag.text.replaceAll(" ", "_")}${
+          withCount ? ` (${tag.count})` : ""
+        }`}
+        url={`/tags/${tag.text}`}
+      />
+    ))
+  }
+</div>

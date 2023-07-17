@@ -1,7 +1,6 @@
 ---
-import type { MarkdownInstance } from "astro";
 import BlogPost from "../../components/BlogPost.astro";
-import TagLink from "../../components/TagLink.astro";
+import TagsSection from "../../components/TagsSection.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getUniqueTags } from "../../utils/markdownUtils";
 
@@ -10,36 +9,28 @@ export async function getStaticPaths() {
     // collecting all tags from all posts
     const allTags = getUniqueTags(await Astro.glob("../posts/*.md"));
 
-    // creating static paths props
     return allTags.map((tag) => ({
-        params: { tag },
+        params: { tag: tag.text },
         props: {
             posts: allPosts.filter((post) =>
-                (post.frontmatter.tags as any[]).includes(tag)
+                (post.frontmatter.tags as any[]).includes(tag.text)
             ),
             allTags,
         },
     }));
 }
 
+type StaticPropsType = Awaited<ReturnType<typeof getStaticPaths>>[0]["props"];
+
 type Props = {
-    posts: MarkdownInstance<Record<string, any>>[];
-    allTags: string[];
+    posts: StaticPropsType["posts"];
+    allTags: StaticPropsType["allTags"];
 };
 const { tag } = Astro.params;
 const { posts, allTags } = Astro.props;
 ---
 
-<style>
-    .tag-link {
-        margin-right: 1rem;
-    }
-
-    .tags-section {
-        padding: 2rem 0;
-    }
-</style>
-<BaseLayout pageTitle={`Posts tagged with ${tag}`}>
+<BaseLayout pageTitle={`Posts tagged with #${tag?.replaceAll(" ", "_")}`}>
     {
         posts.map((post) => (
             <li>
@@ -47,16 +38,7 @@ const { posts, allTags } = Astro.props;
             </li>
         ))
     }
-    <div class="tags-section">
-        <p>other tags to check out:</p>
+    <h2 class="text-2xl mt-8">other tags to check out:</h2>
 
-        {
-            allTags.map((x) => (
-                <TagLink
-                    text={`#${x.replaceAll(" ", "_")}`}
-                    url={`/tags/${x}`}
-                />
-            ))
-        }
-    </div>
+    <TagsSection tags={allTags} />
 </BaseLayout>

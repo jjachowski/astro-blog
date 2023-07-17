@@ -1,5 +1,5 @@
 ---
-import TagLink from "../../components/TagLink.astro";
+import TagsSection from "../../components/TagsSection.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getUniqueTags } from "../../utils/markdownUtils";
 
@@ -10,14 +10,5 @@ const description =
 
 <BaseLayout pageTitle={"Tags page"} metaDescription={description}>
     <h3>{description}</h3>
-    <div class="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:flex-wrap mt-4">
-        {
-            tags.map((tag) => (
-                <TagLink
-                    text={`#${tag.replaceAll(" ", "_")}`}
-                    url={`/tags/${tag}`}
-                />
-            ))
-        }
-    </div>
+    <TagsSection tags={tags} />
 </BaseLayout>
