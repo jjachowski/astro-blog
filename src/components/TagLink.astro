@@ -17,7 +17,8 @@ const i = Math.floor(Math.random() * colors.length);
 {
     text && url && (
         <a
-            class={`col-span-1 whitespace-nowrap border-2 bg-gradient-to-br py-2 text-center text-sm transition hover:scale-[1.02] sm:px-4 ${colors[i]}`}
+            style={`min-width: ${text.length * 11}px;`}
+            class={`col-span-1 whitespace-nowrap border-2 bg-gradient-to-br py-2 text-center text-sm transition hover:scale-[1.02] ${colors[i]}`}
             href={url}
         >
             {text}
