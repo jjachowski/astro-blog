@@ -13,12 +13,13 @@ const { tags, withCount = true } = Astro.props;
 
 <div class="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:flex-wrap mt-4">
   {
-    tags.map((tag) => (
+    tags.map((tag, i) => (
       <TagLink
         text={`#${tag.text.replaceAll(" ", "_")}${
           withCount ? ` (${tag.count})` : ""
         }`}
         url={`/tags/${tag.text}`}
+        index={i}
       />
     ))
   }
