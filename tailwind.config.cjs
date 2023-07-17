@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      jetbrains: ["JetBrains Mono Variable", "sans-serif"],
+      jetbrains: ["JetBrains Mono Variable", "monospace"],
     },
   },
   plugins: [require("@tailwindcss/typography")],
