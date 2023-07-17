@@ -5,20 +5,18 @@ import { getUniqueTags } from "../../utils/markdownUtils";
 
 const tags = getUniqueTags(await Astro.glob("../posts/*.md"));
 const description =
-    "on this website you can find list of all tags used throughout all blog posts";
+    "On this website you can find list of all tags used throughout all blog posts.";
 ---
 
 <BaseLayout pageTitle={"Tags page"} metaDescription={description}>
     <h3>{description}</h3>
-    <div class="tags-list">
+    <div class="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:flex-wrap mt-4">
         {
             tags.map((tag) => (
-                <p>
-                    <TagLink
-                        text={`#${tag.replaceAll(" ", "_")}`}
-                        url={`/tags/${tag}`}
-                    />
-                </p>
+                <TagLink
+                    text={`#${tag.replaceAll(" ", "_")}`}
+                    url={`/tags/${tag}`}
+                />
             ))
         }
     </div>

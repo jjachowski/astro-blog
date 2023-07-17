@@ -4,6 +4,23 @@ type Props = {
     url?: string;
 };
 const { text, url } = Astro.props;
+
+const colors = [
+    "border-indigo-700 bg-indigo-50 text-indigo-800 dark:bg-indigo-600 dark:text-white dark:border-indigo-500",
+    "border-pink-700 bg-pink-50 text-pink-800 dark:bg-pink-600 dark:text-white dark:border-pink-500",
+    "border-purple-700 bg-purple-50 text-purple-800 dark:bg-purple-600 dark:text-white dark:border-purple-500",
+    "border-orange-700 bg-orange-50 text-orange-800 dark:bg-orange-600 dark:text-white dark:border-orange-500",
+];
+const i = Math.floor(Math.random() * colors.length);
 ---
 
-{text && url && <a href={url}>{text}</a>}
+{
+    text && url && (
+        <a
+            class={`col-span-1 border-2 px-4 py-2 text-center transition hover:scale-[1.02] ${colors[i]}`}
+            href={url}
+        >
+            {text}
+        </a>
+    )
+}
