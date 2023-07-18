@@ -7,7 +7,7 @@ export default function Greeting({ messages }: Props) {
   const [greeting, setGreeting] = useState(messages[0]);
 
   return (
-    <div className="rounded-md border-2 border-blue-600 bg-blue-50 p-2 px-4 shadow-md dark:border-blue-400 dark:bg-blue-700">
+    <div className="border-2 border-blue-600 bg-blue-50 p-2 px-4 shadow-md dark:border-blue-400 dark:bg-blue-700">
       <p className="mb-4 text-xl text-blue-700 dark:text-blue-200 sm:mb-2">
         React component! {greeting}!
       </p>
@@ -20,7 +20,7 @@ export default function Greeting({ messages }: Props) {
         whileHover={{ scale: 1.2, rotate: [0, 5, -5, 5, -5, 0] }}
         whileTap={{ scale: 0.7 }}
         transition={{ duration: 0.5, scale: { duration: 0.1 } }}
-        className="m-4 rounded-md border-2 border-blue-700  bg-blue-100 px-4 py-2 text-lg text-blue-700 
+        className="m-4 border-2 border-blue-700  bg-blue-100 px-4 py-2 text-lg text-blue-700 
         dark:border-blue-200 dark:bg-blue-600 dark:text-blue-50
         "
         onClick={() => setGreeting(randomMessage())}
