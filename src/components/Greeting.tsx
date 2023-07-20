@@ -4,11 +4,11 @@ type Props = { messages: string[] };
 export default function Greeting({ messages }: Props) {
   const randomMessage = () =>
     messages[Math.floor(Math.random() * messages.length)];
-  const [greeting, setGreeting] = useState(messages[0]);
+  const [greeting, setGreeting] = useState(messages[3]);
 
   return (
     <div className="border-2 border-blue-600 bg-blue-50 p-2 px-4 shadow-md dark:border-blue-400 dark:bg-blue-700">
-      <p className="mb-4 text-xl text-blue-700 dark:text-blue-200 sm:mb-2">
+      <p className="mb-4 h-12 text-xl text-blue-700 dark:text-blue-200 sm:mb-2">
         React component! {greeting}!
       </p>
       <p className="mb-2 text-blue-600 dark:text-blue-100">
