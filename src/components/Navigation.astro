@@ -3,17 +3,17 @@ import NavigationLink from "./NavigationLink.astro";
 ---
 
 <style>
-    .expanded {
-        max-height: 14rem !important;
-    }
+  .expanded {
+    max-height: 14rem !important;
+  }
 </style>
 
 <div
-    class="max-h-0 sm:max-h-none sm:flex-row sm:items-start overflow-hidden hover:max-h-32 transition-all duration-300 ease-in-out nav-links grid grid-cols-2 gap-4 sm:space-x-4 sm:flex sm:overflow-visible"
+  class="max-h-0 flex flex-col items-center sm:max-h-none overflow-hidden nav-links sm:overflow-visible xs:grid xs:grid-cols-2 xs:gap-6 sm:flex sm:flex-row expanded sm:gap-2 md:gap-4"
 >
-    <NavigationLink text="Home 🏠" href="/" />
-    <NavigationLink text="Blog 📖" href="/blog/" /><NavigationLink
-        text="Tags #️⃣"
-        href="/tags/"
-    /><NavigationLink text="About 👨🏻‍💻" href="/about/" />
+  <NavigationLink text="Home 🏠" href="/" />
+  <NavigationLink text="Blog 📖" href="/blog/" /><NavigationLink
+    text="Tags #️⃣"
+    href="/tags/"
+  /><NavigationLink text="About 👨🏻‍💻" href="/about/" />
 </div>

@@ -4,14 +4,11 @@ import Navigation from "./Navigation.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<div
-    class="relative flex flex-row justify-between items-start sm:items-center mb-8"
->
-    <Hamburger />
-    <Navigation />
-    <ThemeToggle />
+<div class="flex flex-row justify-between items-start sm:items-center mb-8">
+  <Hamburger />
+  <Navigation />
+  <ThemeToggle />
 </div>
-
 <script>
-    import "../scripts/expandMenu.ts";
+  import "../scripts/expandMenu.ts";
 </script>
