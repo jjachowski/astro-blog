@@ -1,7 +1,7 @@
 import react from "@astrojs/react";
+import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig, sharpImageService } from "astro/config";
-import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
@@ -10,7 +10,8 @@ export default defineConfig({
   site: "https://www.jachowski.dev",
   integrations: [react(), tailwind(), sitemap(), mdx()],
   experimental: {
-    assets: true
+    assets: true,
+    viewTransitions: true,
   },
   image: {
     service: sharpImageService()
