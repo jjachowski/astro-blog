@@ -11,9 +11,8 @@ export default defineConfig({
   integrations: [react(), tailwind(), sitemap(), mdx()],
   experimental: {
     assets: true,
-    viewTransitions: true,
   },
   image: {
-    service: sharpImageService()
-  }
+    service: sharpImageService(),
+  },
 });
