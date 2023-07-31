@@ -10,7 +10,7 @@ pubDate: 2023-07-07
 tags: ["astro", "SSG", "my take on"]
 ---
 
-Okay, about the `getStaticPaths`` API in Astro. Honestly, it reminds me a lot of how things used to be with SSR in older versions of _next.js_ before they brought in server components. Not gonna lie, I'm not a big fan of this approach. Dealing with object typing can be a pain, and the syntax is a bit complex and hard to remember.
+Okay, about the `getStaticPaths`` API in **Astro**. Honestly, it reminds me a lot of how things used to be with SSR in older versions of _next.js_ before they brought in server components. Not gonna lie, I'm not a big fan of this approach. Dealing with object typing can be a pain, and the syntax is a bit complex and hard to remember.
 
 But hey, once you get the hang of it, it actually works pretty smoothly. So I guess there's not much to complain about in the end.
 
