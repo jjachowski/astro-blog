@@ -4,7 +4,10 @@ type Props = { messages: string[] };
 export default function Greeting({ messages }: Props) {
   const randomMessage = () =>
     messages[Math.floor(Math.random() * messages.length)];
-  const [greeting, setGreeting] = useState(messages[3]);
+  const [greeting, setGreeting] = useState(
+    messages[messages.length >= 3 ? 3 : 0]
+  );
+  new Date().toLocaleDateString("pl-PL");
 
   return (
     <div className="border-2 border-blue-600 bg-blue-50 p-2 px-4 shadow-md dark:border-blue-400 dark:bg-blue-700">

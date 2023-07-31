@@ -1,0 +1,39 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: MDX Integration
+author: Jakub Jachowski
+description: "In this blog post I write about process of enabling MDX in Astro"
+pubDate: 2023-07-30
+tags: ["astro", "MDX"]
+---
+
+import Greeting from "../../components/Greeting";
+
+# MDX
+
+So why do I need MDX and what even is that? In short - it's a markdown file in which you can use JavaScript and all it's benefits. Want to calculate something? Get todays date? _{(new Date()).toLocaleDateString("pl-PL")}_. Use some of your existing _React_ component? Say no more, MDX got you covered! ⬇️
+
+<Greeting client:load messages={["Hi MDX", "MDX is cool", "Hello!"]} />
+
+## Installation and configuration
+
+As most things in _Astro_, enabling MDX was a piece of cake. It all came down to runing single command to install required astro package and then adding file association for _vscode_ to tread `.mdx` files the same way as `.md`.
+
+```zsh
+# in terminal using yarn
+npm install @astrojs/mdx
+```
+
+```json
+// astro.config.mjs
+{
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
+}
+// TODO: create some component to display file name when using code block 🥲
+```
+
+And just like that, I could use all the features of MDX in my astro app.
+
+Unfortunatley developer experience was far from optimal, I had many issues configuring eslint in `mdx` files. The biggest problem for me was that _intelisense_ was not working at all in MDX files so importing and using components was a pain. After trying with many settings that were resolving some problems while creating new ones I decided to leave it as is for now - without eslint working at all for MDX files. If you know how to setup eslint for such use case - _please let me know! - jakub@jachowski.dev_.
