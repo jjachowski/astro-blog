@@ -1,4 +1,3 @@
-import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -10,15 +9,15 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "dracula-soft",
-      wrap: true
-    }
+      wrap: true,
+    },
   },
   site: "https://www.jachowski.dev",
-  integrations: [react(), tailwind(), sitemap(), mdx(), image()],
-  // experimental: {
-  //   assets: true
-  // },
+  integrations: [react(), tailwind(), sitemap(), mdx()],
+  experimental: {
+    assets: true,
+  },
   image: {
-    service: sharpImageService()
-  }
+    service: sharpImageService(),
+  },
 });
