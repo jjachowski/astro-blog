@@ -1,22 +1,18 @@
 ---
-import szczurson from "../assets/chałka_z_językiem.jpeg";
-import puzolini from "../assets/puzon_dziwna_pozycja.jpeg";
-import CatImage from "../components/CatImage.astro";
-import Greeting from "../components/Greeting";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import szczurson from '../assets/chałka_z_językiem.jpeg';
+import puzolini from '../assets/puzon_dziwna_pozycja.jpeg';
+import CatImage from '../components/CatImage.astro';
+import Greeting from '../components/Greeting';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout pageTitle="Home Page">
-	<p class="text-xl mb-8">
-		Welcome on my portfolio/blog/playground website, feel free to explore
-	</p>
+	<p class="mb-8 text-xl">Welcome on my portfolio/blog/playground website, feel free to explore</p>
 
-	<Greeting client:idle messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+	<Greeting client:idle messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
 
-	<p class="text-xl mt-8 mb-2">Behold - my cats:</p>
-	<div
-		class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 mb-8"
-	>
+	<p class="mb-2 mt-8 text-xl">Behold - my cats:</p>
+	<div class="mb-8 flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0">
 		<CatImage
 			src={puzolini}
 			color="pink"

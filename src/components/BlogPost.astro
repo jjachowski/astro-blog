@@ -1,18 +1,18 @@
 ---
 type Props = {
-  title?: string;
-  url?: string;
+	title?: string;
+	url?: string;
 };
 const { title, url } = Astro.props;
 ---
 
 {
-  title && url && (
-    <a
-      class=" text-xl leading-10 text-indigo-600 decoration-2  visited:text-pink-900 hover:text-pink-400 hover:underline dark:text-pink-500 visited:dark:text-indigo-400"
-      href={url}
-    >
-      {title}
-    </a>
-  )
+	title && url && (
+		<a
+			class=" text-xl leading-10 text-indigo-600 decoration-2  visited:text-pink-900 hover:text-pink-400 hover:underline dark:text-pink-500 visited:dark:text-indigo-400"
+			href={url}
+		>
+			{title}
+		</a>
+	)
 }

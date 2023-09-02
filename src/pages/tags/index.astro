@@ -1,14 +1,13 @@
 ---
-import TagsSection from "../../components/TagsSection.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getUniqueTags } from "../../utils/markdownUtils";
+import TagsSection from '../../components/TagsSection.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUniqueTags } from '../../utils/markdownUtils';
 
-const tags = getUniqueTags(await Astro.glob("../posts/*.md"));
-const description =
-    "On this website you can find list of all tags used throughout all blog posts.";
+const tags = getUniqueTags(await Astro.glob('../posts/*.md'));
+const description = 'On this website you can find list of all tags used throughout all blog posts.';
 ---
 
-<BaseLayout pageTitle={"Tags page"} metaDescription={description}>
-    <p>{description}</p>
-    <TagsSection tags={tags} />
+<BaseLayout pageTitle={'Tags page'} metaDescription={description}>
+	<p>{description}</p>
+	<TagsSection tags={tags} />
 </BaseLayout>

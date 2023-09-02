@@ -1,48 +1,42 @@
 ---
-import "@fontsource-variable/jetbrains-mono";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import MetaDescription from "../components/MetaDescription.astro";
+import '@fontsource-variable/jetbrains-mono';
+import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import MetaDescription from '../components/MetaDescription.astro';
 
 interface Props {
-  pageTitle?: string;
-  metaDescription?: string;
-  withoutHeadTag?: boolean;
+	pageTitle?: string;
+	metaDescription?: string;
+	withoutHeadTag?: boolean;
 }
-const {
-  pageTitle = "This is a page indeed",
-  metaDescription,
-  withoutHeadTag,
-} = Astro.props;
+const { pageTitle = 'This is a page indeed', metaDescription, withoutHeadTag } = Astro.props;
 ---
 
 <html lang="en" class="font-jetbrains">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <MetaDescription description={metaDescription} />
-  </head>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{pageTitle}</title>
+		<ViewTransitions />
+		<MetaDescription description={metaDescription} />
+	</head>
 
-  <body
-    class="w-full flex justify-center bg-rose-100 dark:bg-gray-800 text-pink-900 dark:text-pink-100 transition-colors ease-linear duration-300"
-  >
-    <div class="max-w-4xl p-4 sm:p-8 w-full">
-      <Header />
-      {
-        !withoutHeadTag && (
-          <h1 class="mb-8 text-5xl text-pink-600">{pageTitle}</h1>
-        )
-      }
-      <slot />
-      <Footer />
-    </div>
-  </body>
+	<body
+		class="flex w-full justify-center bg-rose-100 text-pink-900 transition-colors duration-300 ease-linear dark:bg-gray-800 dark:text-pink-100"
+	>
+		<div class="w-full max-w-4xl p-4 sm:p-8">
+			<Header />
+			{!withoutHeadTag && <h1 class="mb-8 text-5xl text-pink-600">{pageTitle}</h1>}
+			<slot />
+			<Footer />
+		</div>
+	</body>
 </html>

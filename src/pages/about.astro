@@ -1,51 +1,41 @@
 ---
-import { Image } from "astro:assets";
-import hondziarz from "../assets/ja_w_hondzie.jpg";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import hondziarz from '../assets/ja_w_hondzie.jpg';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  pageTitle={"About me"}
-  metaDescription="this page is about author of this website - Jakub Jachowski"
+	pageTitle={'About me'}
+	metaDescription="this page is about author of this website - Jakub Jachowski"
 >
-  <div class="prose prose-p:text-justify dark:prose-invert max-w-4xl">
-    <div class="flex flex-col items-center sm:items-end sm:flex-row">
-      <Image
-        src={hondziarz}
-        alt="ja"
-        quality={"low"}
-        class={"border-4 border-indigo-500 w-3/4 mb-2 sm:w-1/4 shadow-sm sm:shadow-2xl "}
-      />
-      <h2
-        class="text-3xl sm:text-4xl text-pink-600 mb-0 text-center mt-0 sm:text-right grow"
-      >
-        Hello there! <br /> My name is Jakub.
-      </h2>
-    </div>
-    <p>
-      I'm a frontend developer who always looks forward to yet another js
-      framework. Currently TypeScript, React.js, Next.js, Astro nad Tailwind are
-      my tools of choice for creating high performance good looking UIs with
-      ease.
-    </p>
-    <p>Can't stand plain JS, always ready to refactor to TypeScript.</p>
-    <p>
-      Trying not to fall into a trap of good practices™, doing what feels and
-      looks right.
-    </p>
-    <p>
-      I enjoy doing code reviews, there's almost always something cool to learn
-      for both sides.
-    </p>
-    <p>
-      Outside of coding, you'll find me geeking about all latest science and
-      tech trends, riding my bike, watching formula 1 races or playing with my
-      two cute cats - Pyza and Chałka.
-    </p>
-    <p>
-      On this website I learn all things web related, try out new technologies
-      and spend time changing colors whenever I feel like it. Keeping triple
-      100/100 lighthouse score is my mission!
-    </p>
-  </div>
+	<div class="prose max-w-4xl dark:prose-invert prose-p:text-justify">
+		<div class="flex flex-col items-center sm:flex-row sm:items-end">
+			<Image
+				src={hondziarz}
+				alt="ja"
+				quality={'low'}
+				class={'border-4 border-indigo-500 w-3/4 mb-2 sm:w-1/4 shadow-sm sm:shadow-2xl '}
+			/>
+			<h2 class="mb-0 mt-0 grow text-center text-3xl text-pink-600 sm:text-right sm:text-4xl">
+				Hello there! <br /> My name is Jakub.
+			</h2>
+		</div>
+		<p>
+			I'm a frontend developer who always looks forward to yet another js framework. Currently
+			TypeScript, React.js, Next.js, Astro nad Tailwind are my tools of choice for creating high
+			performance good looking UIs with ease.
+		</p>
+		<p>Can't stand plain JS, always ready to refactor to TypeScript.</p>
+		<p>Trying not to fall into a trap of good practices™, doing what feels and looks right.</p>
+		<p>I enjoy doing code reviews, there's almost always something cool to learn for both sides.</p>
+		<p>
+			Outside of coding, you'll find me geeking about all latest science and tech trends, riding my
+			bike, watching formula 1 races or playing with my two cute cats - Pyza and Chałka.
+		</p>
+		<p>
+			On this website I learn all things web related, try out new technologies and spend time
+			changing colors whenever I feel like it. Keeping triple 100/100 lighthouse score is my
+			mission!
+		</p>
+	</div>
 </BaseLayout>

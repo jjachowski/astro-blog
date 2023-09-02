@@ -1,12 +1,12 @@
 ---
 type Props = {
-    platform: string;
-    username: string;
+	platform: string;
+	username: string;
 };
 const { platform, username } = Astro.props;
 ---
 
 <a
-    class="text-indigo-700 dark:text-pink-300 underline hover:dark:text-indigo-200 hover:text-pink-600"
-    href={`https://www.${platform}.com/${username}`}>{platform}</a
+	class="text-indigo-700 underline hover:text-pink-600 dark:text-pink-300 hover:dark:text-indigo-200"
+	href={`https://www.${platform}.com/${username}`}>{platform}</a
 >

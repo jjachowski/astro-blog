@@ -1,39 +1,27 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout
-  pageTitle={frontmatter.title}
-  metaDescription={frontmatter.description}
-  withoutHeadTag
->
-  <div
-    class="text-sm bg-gray-100 dark:bg-gray-700 py-2 px-2 border-2 border-gray-300 text-gray-700 dark:border-gray-500 dark:text-gray-300 mb-10"
-  >
-    <h1 class="text-xl">title: {frontmatter.title}</h1>
-    {
-      frontmatter.pubDate && (
-        <di>
-          <p>
-            published on:{" "}
-            {new Date(frontmatter.pubDate).toLocaleDateString("pl-PL")}
-          </p>
-          <p>
-            tags:{" "}
-            {frontmatter.tags
-              .map((x: string) => "#" + x.replaceAll(" ", "_"))
-              .join(" ")}
-          </p>
-        </di>
-      )
-    }
-    <p>written by: {frontmatter.author}</p>
-  </div>
+<BaseLayout pageTitle={frontmatter.title} metaDescription={frontmatter.description} withoutHeadTag>
+	<div
+		class="mb-10 border-2 border-gray-300 bg-gray-100 px-2 py-2 text-sm text-gray-700 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-300"
+	>
+		<h1 class="text-xl">title: {frontmatter.title}</h1>
+		{
+			frontmatter.pubDate && (
+				<di>
+					<p>published on: {new Date(frontmatter.pubDate).toLocaleDateString('pl-PL')}</p>
+					<p>tags: {frontmatter.tags.map((x: string) => '#' + x.replaceAll(' ', '_')).join(' ')}</p>
+				</di>
+			)
+		}
+		<p>written by: {frontmatter.author}</p>
+	</div>
 
-  <article
-    class="prose dark:prose-invert prose-headings:font-medium prose-lg prose-em:text-indigo-700 dark:prose-em:text-indigo-300 prose-p:text-justify mx-auto prose-strong:text-pink-700 dark:prose-strong:text-pink-300"
-  >
-    <slot />
-  </article>
+	<article
+		class="prose prose-lg mx-auto dark:prose-invert prose-headings:font-medium prose-p:text-justify prose-strong:text-pink-700 prose-em:text-indigo-700 dark:prose-strong:text-pink-300 dark:prose-em:text-indigo-300"
+	>
+		<slot />
+	</article>
 </BaseLayout>

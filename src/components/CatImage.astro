@@ -1,36 +1,30 @@
 ---
-import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 type Props = {
-  src: ImageMetadata;
-  alt: string;
-  description: string;
-  color: "amber" | "pink";
+	src: ImageMetadata;
+	alt: string;
+	description: string;
+	color: 'amber' | 'pink';
 };
 
 const { src, alt, description, color } = Astro.props;
 const borderColors = {
-  pink: "border-pink-500 dark:border-pink-300",
-  amber: "border-amber-500 dark:border-amber-100",
+	pink: 'border-pink-500 dark:border-pink-300',
+	amber: 'border-amber-500 dark:border-amber-100',
 };
 
 const pTagColors = {
-  pink: "bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100",
-  amber:
-    "bg-amber-100 p-4 dark:bg-amber-700 text-amber-800 dark:text-amber-100",
+	pink: 'bg-pink-200 text-pink-800 dark:bg-pink-700 dark:text-pink-100',
+	amber: 'bg-amber-100 p-4 dark:bg-amber-700 text-amber-800 dark:text-amber-100',
 };
 ---
 
 <div
-  class={`sm:w-1/2 overflow-hidden border-8 ${borderColors[color]} shadow-md sm:hover:scale-[1.02] transition ease-linear duration-300`}
+	class={`sm:w-1/2 overflow-hidden border-8 ${borderColors[color]} shadow-md sm:hover:scale-[1.02] transition ease-linear duration-300`}
 >
-  <Image
-    class={`border-b-8 ${borderColors[color]}`}
-    src={src}
-    quality="low"
-    alt={alt}
-  />
-  <p class={`text-center ${pTagColors[color]} p-4`}>
-    {description}
-  </p>
+	<Image class={`border-b-8 ${borderColors[color]}`} src={src} alt={alt} width={400} />
+	<p class={`text-center ${pTagColors[color]} p-4`}>
+		{description}
+	</p>
 </div>

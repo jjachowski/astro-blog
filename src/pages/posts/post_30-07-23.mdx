@@ -2,18 +2,18 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: MDX Integration
 author: Jakub Jachowski
-description: "In this blog post I write about process of enabling MDX in Astro"
+description: 'In this blog post I write about process of enabling MDX in Astro'
 pubDate: 2023-07-30
-tags: ["astro", "MDX"]
+tags: ['astro', 'MDX']
 ---
 
-import Greeting from "../../components/Greeting";
+import Greeting from '../../components/Greeting';
 
 # MDX
 
 So why do I need MDX and what even is that? In short - it's a markdown file in which you can use JavaScript and all it's benefits. Want to calculate something? Get todays date? _{(new Date()).toLocaleDateString("pl-PL")}_. Use some of your existing _React_ component? Say no more, MDX got you covered! ⬇️
 
-<Greeting client:load messages={["Hi MDX", "MDX is cool", "Hello!"]} />
+<Greeting client:load messages={['Hi MDX', 'MDX is cool', 'Hello!']} />
 
 ## Installation and configuration
 

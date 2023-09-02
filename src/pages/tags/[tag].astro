@@ -1,44 +1,42 @@
 ---
-import BlogPost from "../../components/BlogPost.astro";
-import TagsSection from "../../components/TagsSection.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getUniqueTags } from "../../utils/markdownUtils";
+import BlogPost from '../../components/BlogPost.astro';
+import TagsSection from '../../components/TagsSection.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getUniqueTags } from '../../utils/markdownUtils';
 
 export async function getStaticPaths() {
-    const allPosts = await Astro.glob("../posts/*.md");
-    // collecting all tags from all posts
-    const allTags = getUniqueTags(await Astro.glob("../posts/*.md"));
+	const allPosts = await Astro.glob('../posts/*.md');
+	// collecting all tags from all posts
+	const allTags = getUniqueTags(await Astro.glob('../posts/*.md'));
 
-    return allTags.map((tag) => ({
-        params: { tag: tag.text },
-        props: {
-            posts: allPosts.filter((post) =>
-                (post.frontmatter.tags as any[]).includes(tag.text)
-            ),
-            allTags,
-        },
-    }));
+	return allTags.map((tag) => ({
+		params: { tag: tag.text },
+		props: {
+			posts: allPosts.filter((post) => (post.frontmatter.tags as any[]).includes(tag.text)),
+			allTags,
+		},
+	}));
 }
 
-type StaticPropsType = Awaited<ReturnType<typeof getStaticPaths>>[0]["props"];
+type StaticPropsType = Awaited<ReturnType<typeof getStaticPaths>>[0]['props'];
 
 type Props = {
-    posts: StaticPropsType["posts"];
-    allTags: StaticPropsType["allTags"];
+	posts: StaticPropsType['posts'];
+	allTags: StaticPropsType['allTags'];
 };
 const { tag } = Astro.params;
 const { posts, allTags } = Astro.props;
 ---
 
-<BaseLayout pageTitle={`Posts tagged with #${tag?.replaceAll(" ", "_")}`}>
-    {
-        posts.map((post) => (
-            <li>
-                <BlogPost title={post.frontmatter.title} url={post.url} />
-            </li>
-        ))
-    }
-    <h2 class="text-2xl mt-8">other tags to check out:</h2>
+<BaseLayout pageTitle={`Posts tagged with #${tag?.replaceAll(' ', '_')}`}>
+	{
+		posts.map((post) => (
+			<li>
+				<BlogPost title={post.frontmatter.title} url={post.url} />
+			</li>
+		))
+	}
+	<h2 class="mt-8 text-2xl">other tags to check out:</h2>
 
-    <TagsSection tags={allTags} />
+	<TagsSection tags={allTags} />
 </BaseLayout>

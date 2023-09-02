@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Rss feed function and adding react integration"
+title: 'Rss feed function and adding react integration'
 pubDate: 2023-07-08
-description: "In this post I describe my experience of adding rss feed functionality to astro application and react integration"
-author: "Jakub Jachowski"
+description: 'In this post I describe my experience of adding rss feed functionality to astro application and react integration'
+author: 'Jakub Jachowski'
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
-  alt: "The full Astro logo."
-tags: ["astro", "react", "preact", "integration", "rss", "blogging"]
+  url: 'https://docs.astro.build/assets/full-logo-light.png'
+  alt: 'The full Astro logo.'
+tags: ['astro', 'react', 'preact', 'integration', 'rss', 'blogging']
 ---
 
 ## RSS feed

@@ -1,29 +1,29 @@
 ---
 type Props = {
-  text?: string;
-  url?: string;
-  index?: number;
+	text?: string;
+	url?: string;
+	index?: number;
 };
 const { text, url, index } = Astro.props;
 
 const colors = [
-  "border-indigo-800 from-indigo-50 to-indigo-200 text-indigo-900 dark:from-indigo-600 dark:to-indigo-400 dark:text-white dark:border-indigo-200",
-  "border-pink-700 from-pink-50 to-pink-200 text-pink-900 dark:from-pink-600 dark:to-pink-400 dark:text-white dark:border-pink-200",
-  "border-purple-700 from-purple-50 to-purple-200 text-purple-900 dark:from-purple-600 dark:to-purple-400 dark:text-white dark:border-purple-200",
-  "border-orange-700 from-orange-50 to-orange-200 text-orange-900 dark:from-orange-600 dark:to-orange-400 dark:text-white dark:border-orange-200",
+	'border-indigo-800 from-indigo-50 to-indigo-200 text-indigo-900 dark:from-indigo-600 dark:to-indigo-400 dark:text-white dark:border-indigo-200',
+	'border-pink-700 from-pink-50 to-pink-200 text-pink-900 dark:from-pink-600 dark:to-pink-400 dark:text-white dark:border-pink-200',
+	'border-purple-700 from-purple-50 to-purple-200 text-purple-900 dark:from-purple-600 dark:to-purple-400 dark:text-white dark:border-purple-200',
+	'border-orange-700 from-orange-50 to-orange-200 text-orange-900 dark:from-orange-600 dark:to-orange-400 dark:text-white dark:border-orange-200',
 ];
 // const i = Math.floor(Math.random() * colors.length);
 ---
 
 {
-  text && url && (
-    <a
-      class={`col-span-1 flex items-center justify-center border-4 bg-gradient-to-br py-3 text-center text-sm transition hover:scale-[1.02] sm:px-4 ${
-        colors[(index ?? 0) % colors.length]
-      }`}
-      href={url}
-    >
-      {text}
-    </a>
-  )
+	text && url && (
+		<a
+			class={`col-span-1 flex items-center justify-center border-4 bg-gradient-to-br py-3 text-center text-sm transition hover:scale-[1.02] sm:px-4 ${
+				colors[(index ?? 0) % colors.length]
+			}`}
+			href={url}
+		>
+			{text}
+		</a>
+	)
 }

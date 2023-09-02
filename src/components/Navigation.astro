@@ -1,19 +1,19 @@
 ---
-import NavigationLink from "./NavigationLink.astro";
+import NavigationLink from './NavigationLink.astro';
 ---
 
 <style>
-  .expanded {
-    max-height: 14rem !important;
-  }
+	.expanded {
+		max-height: 14rem !important;
+	}
 </style>
 
 <div
-  class="max-h-0 transition-all duration-300 flex flex-col items-center sm:max-h-none overflow-hidden nav-links sm:overflow-visible xs:grid xs:grid-cols-2 xs:gap-6 sm:flex sm:flex-row sm:gap-2 md:gap-4"
+	class="nav-links flex max-h-0 flex-col items-center overflow-hidden transition-all duration-300 xs:grid xs:grid-cols-2 xs:gap-6 sm:flex sm:max-h-none sm:flex-row sm:gap-2 sm:overflow-visible md:gap-4"
 >
-  <NavigationLink text="Home 🏠" href="/" />
-  <NavigationLink text="Blog 📖" href="/blog/" /><NavigationLink
-    text="Tags #️⃣"
-    href="/tags/"
-  /><NavigationLink text="About 👨🏻‍💻" href="/about/" />
+	<NavigationLink text="Home 🏠" href="/" />
+	<NavigationLink text="Blog 📖" href="/blog/" /><NavigationLink
+		text="Tags #️⃣"
+		href="/tags/"
+	/><NavigationLink text="About 👨🏻‍💻" href="/about/" />
 </div>
