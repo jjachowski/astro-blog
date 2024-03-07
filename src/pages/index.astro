@@ -7,8 +7,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout pageTitle="Home Page">
-	<p class="mb-8 text-xl">Welcome on my portfolio/blog/playground website, feel free to explore. The idea behind this website was to explore yet another framework - Astro.js</p>
+	<p class="mb-8 text-xl">Welcome on my portfolio/blog/playground website, feel free to explore. The idea behind this website was to explore yet another framework - Astro.js.</p>
 	<p class="mb-8 text-l">Astro main benefit is being lightweight and SEO friendly, so a challenge I set for myself was to score 100/100 in lighthouse when building this app.</p>
+	<p class="mb-8 text-sm">TODO: fix view transition dark theme bug, add todo component to write prettier todos</p>
 
 	<Greeting client:idle messages={['Hi', 'Hello', 'Howdy', 'Hey there']} />
 
