@@ -3,7 +3,6 @@ import BlogPost from '../components/BlogPost.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md*');
 ---
-
 <BaseLayout pageTitle={'Blog page'} metaDescription="here are all blog posts for this website">
 	<p>blog posts:</p>
 	<ul>
