@@ -5,14 +5,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getUniqueTags } from '../../utils/markdownUtils';
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob('../posts/*.md');
+	const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 	// collecting all tags from all posts
-	const allTags = getUniqueTags(await Astro.glob('../posts/*.md'));
+	const allTags = getUniqueTags(allPosts);
 
 	return allTags.map((tag) => ({
 		params: { tag: tag.text },
 		props: {
-			posts: allPosts.filter((post) => (post.frontmatter.tags as any[]).includes(tag.text)),
+			posts: allPosts.filter((post: any) => (post.frontmatter.tags as any[]).includes(tag.text)),
 			allTags,
 		},
 	}));
@@ -30,7 +30,7 @@ const { posts, allTags } = Astro.props;
 
 <BaseLayout pageTitle={`Posts tagged with #${tag?.replaceAll(' ', '_')}`}>
 	{
-		posts.map((post) => (
+		posts.map((post: any) => (
 			<li>
 				<BlogPost title={post.frontmatter.title} url={post.url} />
 			</li>

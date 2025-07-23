@@ -1,7 +1,7 @@
 ---
 import BlogPost from '../components/BlogPost.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const allPosts = await Astro.glob('../pages/posts/*.md*');
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
 ---
 <BaseLayout pageTitle={'Blog page'} metaDescription="here are all blog posts for this website">
 	<p>blog posts:</p>
@@ -9,10 +9,10 @@ const allPosts = await Astro.glob('../pages/posts/*.md*');
 		{
 			allPosts
 				.sort(
-					(a, b) =>
+					(a: any, b: any) =>
 						new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
 				)
-				.map((post) => (
+				.map((post: any) => (
 					<li class="mb-4">
 						<BlogPost title={post.frontmatter.title} url={post.url} />
 					</li>

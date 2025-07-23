@@ -3,7 +3,7 @@ import TagsSection from '../../components/TagsSection.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getUniqueTags } from '../../utils/markdownUtils';
 
-const tags = getUniqueTags(await Astro.glob('../posts/*.md'));
+const tags = getUniqueTags(Object.values(import.meta.glob('../posts/*.md', { eager: true })));
 const description = 'On this website you can find list of all tags used throughout all blog posts.';
 ---
 
