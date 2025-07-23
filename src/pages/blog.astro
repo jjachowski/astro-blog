@@ -1,7 +1,7 @@
 ---
 import BlogPost from '../components/BlogPost.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 <BaseLayout pageTitle={'Blog page'} metaDescription="here are all blog posts for this website">
 	<p>blog posts:</p>
